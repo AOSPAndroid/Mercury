@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Engagement runtime data — never commit live engagement output or samples
+engagements/audit.log.jsonl
+engagements/quarantine/
+engagements/*.engagement.yaml
+!engagements/example.engagement.yaml
+*.findings.json
+report.md

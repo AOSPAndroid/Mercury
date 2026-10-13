@@ -1,0 +1,28 @@
+# Example Mercury engagement.
+#
+# Copy this file, fill it in with the details of a REAL authorized engagement,
+# and set authorization.acknowledged to true ONLY if you hold the signed
+# statement of work / rules of engagement referenced below. Mercury refuses to
+# act until that flag is set and the scope has at least one allow_hosts entry.
+
+name: "ACME Q4 external assessment"
+operator: "your-name@your-company.example"
+
+authorization:
+  client: "ACME Corp"
+  authorizing_party: "Jane Doe, CISO, ACME Corp"
+  contact_email: "security@acme.example"
+  sow_reference: "SOW-2026-014 / RoE signed 2026-10-01"
+  acknowledged: false   # set true only with signed authorization in hand
+
+scope:
+  allow_hosts:
+    - "198.51.100.0/24"      # ACME external range (RFC 5737 documentation net)
+    - "assessment.acme.example"
+  deny_hosts:
+    - "198.51.100.1"         # client-excluded gateway
+    - "payments.acme.example"
+  allow_ports: [80, 443, 8080, 8443]
+  windows:
+    - start: "2026-10-14T22:00:00Z"
+      end:   "2026-10-15T06:00:00Z"
